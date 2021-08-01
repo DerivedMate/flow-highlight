@@ -1,0 +1,25 @@
+{
+    "name": "flow-highlight",
+    "displayName": "flow-highlight",
+    "description": "Flow.hs language highlighting",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.58.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "flowhs",
+            "aliases": ["flow", "flowhs"],
+            "extensions": [".hf"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "flowhs",
+            "scopeName": "source.flowhs",
+            "path": "./syntaxes/flowhs.tmLanguage.json"
+        }]
+    }
+}

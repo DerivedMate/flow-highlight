@@ -1,0 +1,142 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "flowhs",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#parameters"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.flowhs",
+          "match": "\\b(map|keep|keep\\[\\]|fold|unfold|gen)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.flowhs",
+      "begin": "`",
+      "end": "`",
+      "patterns": [
+        {
+          "name": "constant.character.escape.flowhs",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "types": {
+      "name": "storage.type.flowhs",
+      "patterns": [
+        {
+          "name": "storage.type",
+          "match": "\\b([A-Z][A-Za-z]*)\\b"
+        },
+        {
+          "name": "storage.type",
+          "contentName": "storage.modifier",
+          "begin": "<",
+          "end": ">",
+          "match": "\\b([A-Z][A-Za-z]*)\\b"
+        }
+      ]
+    },
+    "parameters": {
+      "name": "variable.parameter.flowhs",
+      "patterns": [
+        {
+          "name": "variable.parameter",
+          "match": "[A-Za-z][\\w\\d]*"
+        },
+        {
+          "name": "entity.name.type.flowhs",
+          "begin": "\\(",
+          "end": "\\)",
+          "match": "\\b([A-Z][A-Za-z]*)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.block.flowhs",
+      "begin": "%%",
+      "end": "%%",
+      "patterns": [
+        {
+          "name": "comment.block",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.flowhs",
+      "patterns": [
+        {
+          "name": "constant.numeric.integral",
+          "match": "[+-]?\\d+"
+        },
+        {
+          "name": "constant.numeric.fractional",
+          "match": "[+-]?\\d+\\.\\d*"
+        }
+      ]
+    },
+    "variables": {
+      "name": "variable.flowhs",
+      "patterns": [
+        {
+          "name": "variable.name",
+          "include": "#parameters"
+        },
+        {
+          "name": "variable.language",
+          "match": "~[A-Za-z][\\w\\d]*"
+        },
+        {
+          "name": "variable.other",
+          "match": "&\\d+"
+        }
+      ]
+    },
+    "#operators": {
+      "name": "keyword.operator.flowhs",
+      "patterns": [
+        {
+          "name": "keyword.operator.flowhs",
+          "match": "\\b(=>|~>|<~|\\-|\\+|\\*|\\^|&&|\\|\\||%|>|<|<=|>=|=)\\b"
+        }
+      ]
+    },
+    "containers": {
+      "name": "constant.character.flowhs",
+      "patterns": [
+        {
+          "name": "keyword.other",
+          "match": "[{}\\[\\]\\(\\)\\<\\>]"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.flowhs"
+}
