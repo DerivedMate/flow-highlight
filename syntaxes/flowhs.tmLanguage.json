@@ -127,8 +127,8 @@
       "name": "keyword.operator.flowhs",
       "patterns": [
         {
-          "name": "keyword.operator.flowhs",
-          "match": "\\b(=>|~>|<~|\\-|\\+|\\*|\\^|&&|\\|\\||%|>|<|<=|>=|=)\\b"
+          "name": "keyword.operator",
+          "match": "\\b(=>|~>|<~|\\-|\\+|\\*|\\^|&&|\\|\\||%|>|<|<=|>=|=|::)\\b"
         }
       ]
     },
