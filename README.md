@@ -8,6 +8,10 @@ Syntax highlighting for [FlowHs](https://github.com/DerivedMate/flow).
 
 ## Release Notes
 
+### 1.2.0
+
+* Import statements
+
 ### 1.1.0
 
 * Casting operator

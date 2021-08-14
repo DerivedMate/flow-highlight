@@ -25,6 +25,9 @@
     },
     {
       "include": "#operators"
+    },
+    {
+      "include": "#import"
     }
   ],
   "repository": {
@@ -94,11 +97,11 @@
       "patterns": [
         {
           "name": "constant.numeric.integral",
-          "match": "[+-]?\\d+"
+          "match": "([+-]?\\d+)"
         },
         {
           "name": "constant.numeric.fractional",
-          "match": "[+-]?\\d+\\.\\d*"
+          "match": "([+-]?\\d+\\.\\d*)"
         }
       ]
     },
@@ -123,7 +126,7 @@
         }
       ]
     },
-    "#operators": {
+    "operators": {
       "name": "keyword.operator.flowhs",
       "patterns": [
         {
@@ -138,6 +141,19 @@
         {
           "name": "keyword.other",
           "match": "[{}\\[\\]\\(\\)\\<\\>]"
+        }
+      ]
+    },
+    "import": {
+      "name": "keyword.other.flowhs",
+      "patterns": [
+        {
+          "name": "keyword.other",
+          "match": "@(import)"
+        },
+        {
+          "name": "meta.preprocessor.string",
+          "match": "@import\\(([\\.\\/\\w\\d])\\)"
         }
       ]
     }
